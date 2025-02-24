@@ -104,7 +104,7 @@ public class CursosInscritos implements Servicios{
             escritor.write("Email: " + inscripcion.getEstudiante().getPrograma().getFacultad().getDecano().getEmail());
             escritor.newLine();
             escritor.flush();
-            System.out.println("Persona guardada correctamente");
+            System.out.println("Inscripciones guardadas correctamente");
         }
         catch(IOException e){
             System.out.println("Ocurrió un error al escribir el archivo: " + e.getMessage());
