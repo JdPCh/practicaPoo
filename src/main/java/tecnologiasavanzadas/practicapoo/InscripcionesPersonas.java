@@ -21,6 +21,10 @@ public class InscripcionesPersonas {
     
     ArrayList<Persona> listado;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> f076d41 (Version-4)
     public
     
     @Override

@@ -26,7 +26,11 @@ public class Profesor extends Persona{
         this.tipoContrato = "";
     }
 
+<<<<<<< HEAD
     Profesor(String tipoContrato, Double id, String nombre, String apellido, String email) {
+=======
+    Profesor(Double id, String nombre, String apellido, String email, String tipoContrato) {
+>>>>>>> f076d41 (Version-4)
         super(id, nombre, apellido, email);
         this.tipoContrato = tipoContrato;
     }

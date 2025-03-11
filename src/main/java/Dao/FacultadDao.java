@@ -22,13 +22,22 @@ import tecnologiasavanzadas.practicapoo.Persona;
 public class FacultadDao {
 
   
+<<<<<<< HEAD
     public void crearFacultad(Facultad facultad) {
+=======
+    public void crearFacultad(String nombre, Double idDecano) {
+>>>>>>> f076d41 (Version-4)
         String sql = "INSERT INTO facultad (nombre, decano_id) VALUES (?, ?)";
 
         try (Connection conn = ConexionDB.obtenerConexion(); 
              PreparedStatement stmt = conn.prepareStatement(sql)) {
+<<<<<<< HEAD
             stmt.setString(1, facultad.getNombre());
             stmt.setDouble(2, facultad.getDecano().getId());
+=======
+            stmt.setString(1, nombre);
+            stmt.setDouble(2, idDecano);
+>>>>>>> f076d41 (Version-4)
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -67,14 +76,24 @@ public class FacultadDao {
     }
 
   
+<<<<<<< HEAD
     public void actualizarFacultad(Facultad facultad) {
+=======
+    public void actualizarFacultad(String nombre, Double decanoId, Double facultadId) {
+>>>>>>> f076d41 (Version-4)
         String sql = "UPDATE facultad SET nombre = ?, decano_id = ? WHERE id = ?";
 
         try (Connection conn = ConexionDB.obtenerConexion(); 
              PreparedStatement stmt = conn.prepareStatement(sql)) {
+<<<<<<< HEAD
             stmt.setString(1, facultad.getNombre());
             stmt.setDouble(2, facultad.getDecano().getId());
             stmt.setDouble(3, facultad.getId());
+=======
+            stmt.setString(1, nombre);
+            stmt.setDouble(2, decanoId);
+            stmt.setDouble(3, facultadId);
+>>>>>>> f076d41 (Version-4)
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

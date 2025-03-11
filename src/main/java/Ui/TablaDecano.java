@@ -3,14 +3,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package Ui;
+<<<<<<< HEAD
 import Dao.PersonaDao;
+=======
+import Controlador.PersonaControlador;
+import DTO.PersonaDTO;
+>>>>>>> f076d41 (Version-4)
 import Ui.VentanasEmergentes.FormularioDecano;
 import Ui.VentanasEmergentes.FormularioDecanoActualizar;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
+<<<<<<< HEAD
 import tecnologiasavanzadas.practicapoo.Persona;
+=======
+
+>>>>>>> f076d41 (Version-4)
 
 /**
  *
@@ -21,8 +30,17 @@ public class TablaDecano extends javax.swing.JPanel {
     /**
      * Creates new form FormularioDecano
      */
+<<<<<<< HEAD
     public TablaDecano() {
         initComponents();
+=======
+    
+    private final PersonaControlador personaControlador;
+    
+    public TablaDecano(PersonaControlador personaControlador) {
+        initComponents();
+        this.personaControlador = personaControlador;
+>>>>>>> f076d41 (Version-4)
         refrescar();
     }
 
@@ -143,7 +161,11 @@ public class TablaDecano extends javax.swing.JPanel {
     private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
        
        
+<<<<<<< HEAD
         FormularioDecanoActualizar formularioDecanoActualizar = new FormularioDecanoActualizar((JFrame) SwingUtilities.getWindowAncestor(this), true);
+=======
+        FormularioDecanoActualizar formularioDecanoActualizar = new FormularioDecanoActualizar((JFrame) SwingUtilities.getWindowAncestor(this), true, personaControlador);
+>>>>>>> f076d41 (Version-4)
         
         formularioDecanoActualizar.setId(idSeleccionado());
         
@@ -153,7 +175,11 @@ public class TablaDecano extends javax.swing.JPanel {
     }//GEN-LAST:event_actualizarActionPerformed
 
     private void btn_crearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_crearActionPerformed
+<<<<<<< HEAD
         FormularioDecano formularioDecano = new FormularioDecano((JFrame) SwingUtilities.getWindowAncestor(this), true);
+=======
+        FormularioDecano formularioDecano = new FormularioDecano((JFrame) SwingUtilities.getWindowAncestor(this), true, personaControlador);
+>>>>>>> f076d41 (Version-4)
         
         formularioDecano.setVisible(true);
         
@@ -162,6 +188,7 @@ public class TablaDecano extends javax.swing.JPanel {
 
     
     public void refrescar(){
+<<<<<<< HEAD
         PersonaDao personaDao = new PersonaDao();
         
         List<Persona> personas = personaDao.leerPersonas();
@@ -190,6 +217,20 @@ public class TablaDecano extends javax.swing.JPanel {
         PersonaDao personaDao = new PersonaDao();
         
         personaDao.eliminarPersona(idSeleccionado());    
+=======
+        List<PersonaDTO> facultades = personaControlador.obtenerPersonas();
+        
+        DefaultTableModel model =  (DefaultTableModel) tabla.getModel();
+        model.setRowCount(0);
+
+        for (PersonaDTO dto : facultades) {
+            model.addRow(new Object[]{ dto.getId(), dto.getNombre(), dto.getApellido(), dto.getEmail()  });
+        }
+    }        
+    
+    private void borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarActionPerformed
+        personaControlador.eliminarPersona(idSeleccionado());    
+>>>>>>> f076d41 (Version-4)
         
         refrescar();
     }//GEN-LAST:event_borrarActionPerformed

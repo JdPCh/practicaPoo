@@ -3,14 +3,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package Ui;
+<<<<<<< HEAD
 import Dao.FacultadDao;
+=======
+import Controlador.FacultadControlador;
+import Controlador.PersonaControlador;
+import DTO.FacultadDTO;
+>>>>>>> f076d41 (Version-4)
 import Ui.VentanasEmergentes.FormularioFacultad;
 import Ui.VentanasEmergentes.FormularioFacultadActualizar;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
+<<<<<<< HEAD
 import tecnologiasavanzadas.practicapoo.Facultad;
+=======
+
+>>>>>>> f076d41 (Version-4)
 
 
 /**
@@ -22,7 +32,17 @@ public class TablaFacultad extends javax.swing.JPanel {
     /**
      * Creates new form FormularioFacultad
      */
+<<<<<<< HEAD
     public TablaFacultad() {
+=======
+    
+    private final FacultadControlador facultadControlador;
+    private final PersonaControlador personaControlador;
+    
+    public TablaFacultad(FacultadControlador facultadControlador, PersonaControlador personaControlador) {
+        this.facultadControlador = facultadControlador;
+        this.personaControlador = personaControlador;
+>>>>>>> f076d41 (Version-4)
         initComponents();
         refrescar();
     }
@@ -123,6 +143,7 @@ public class TablaFacultad extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
     public void refrescar(){
+<<<<<<< HEAD
         FacultadDao facultadDao = new FacultadDao();
         
         List<Facultad> facultades = facultadDao.leerFacultades();
@@ -144,6 +165,16 @@ public class TablaFacultad extends javax.swing.JPanel {
         }
 
         tabla.setModel(model);
+=======
+        List<FacultadDTO> facultades = facultadControlador.obtenerFacultades();
+        
+        DefaultTableModel model =  (DefaultTableModel) tabla.getModel();
+        model.setRowCount(0);
+
+        for (FacultadDTO dto : facultades) {
+            model.addRow(new Object[]{ dto.getId(), dto.getNombre(), dto.getNombreDecano() });
+        }
+>>>>>>> f076d41 (Version-4)
     }        
     
     private Double idSeleccionado(){
@@ -158,9 +189,15 @@ public class TablaFacultad extends javax.swing.JPanel {
     }
     
     private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
+<<<<<<< HEAD
         FormularioFacultadActualizar formularioFacultadActualizar = new FormularioFacultadActualizar((JFrame) SwingUtilities.getWindowAncestor(this), true);
         
         formularioFacultadActualizar.setId(idSeleccionado());
+=======
+        FormularioFacultadActualizar formularioFacultadActualizar = new FormularioFacultadActualizar((JFrame) SwingUtilities.getWindowAncestor(this), true, facultadControlador, personaControlador);
+        
+        formularioFacultadActualizar.setIdFacultad(idSeleccionado());
+>>>>>>> f076d41 (Version-4)
         
         formularioFacultadActualizar.setVisible(true);
         
@@ -168,7 +205,11 @@ public class TablaFacultad extends javax.swing.JPanel {
     }//GEN-LAST:event_actualizarActionPerformed
 
     private void btn_crearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_crearActionPerformed
+<<<<<<< HEAD
         FormularioFacultad formularioFacultad = new FormularioFacultad((JFrame) SwingUtilities.getWindowAncestor(this), true);
+=======
+        FormularioFacultad formularioFacultad = new FormularioFacultad((JFrame) SwingUtilities.getWindowAncestor(this), true,  personaControlador, facultadControlador);
+>>>>>>> f076d41 (Version-4)
         
         formularioFacultad.setVisible(true);
         
@@ -176,9 +217,14 @@ public class TablaFacultad extends javax.swing.JPanel {
     }//GEN-LAST:event_btn_crearActionPerformed
 
     private void borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarActionPerformed
+<<<<<<< HEAD
         FacultadDao facultadDao = new FacultadDao();
         
         facultadDao.eliminarFacultad(idSeleccionado());
+=======
+  
+        facultadControlador.eliminarFacultad(idSeleccionado());
+>>>>>>> f076d41 (Version-4)
         
         refrescar();
     }//GEN-LAST:event_borrarActionPerformed

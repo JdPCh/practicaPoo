@@ -3,8 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
 package Ui.VentanasEmergentes;
+<<<<<<< HEAD
 import Dao.PersonaDao;
 import tecnologiasavanzadas.practicapoo.Persona;
+=======
+import Controlador.PersonaControlador;
+>>>>>>> f076d41 (Version-4)
 
 /**
  *
@@ -16,10 +20,20 @@ public class FormularioDecanoActualizar extends javax.swing.JDialog {
      * Creates new form FormularioDecano
      */
     
+<<<<<<< HEAD
     Double id;
     
     public FormularioDecanoActualizar(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+=======
+    private final PersonaControlador personaControlador;
+    
+    Double idPersona;
+    
+    public FormularioDecanoActualizar(java.awt.Frame parent, boolean modal, PersonaControlador personaControlador) {
+        super(parent, modal);
+        this.personaControlador = new PersonaControlador();
+>>>>>>> f076d41 (Version-4)
         initComponents();
     }
 
@@ -117,8 +131,13 @@ public class FormularioDecanoActualizar extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
+<<<<<<< HEAD
     public void setId(Double id){
         this.id = id;
+=======
+    public void setId(Double idPersona){
+        this.idPersona = idPersona;
+>>>>>>> f076d41 (Version-4)
     }
     private void emailDecanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailDecanoActionPerformed
         // TODO add your handling code here:
@@ -129,15 +148,20 @@ public class FormularioDecanoActualizar extends javax.swing.JDialog {
         String apellido = apellidoDecano.getText();
         String email = emailDecano.getText();
         
+<<<<<<< HEAD
         Persona persona = new Persona(id ,nombre, apellido, email);
         
         PersonaDao personaDao = new PersonaDao();
         
         personaDao.actualizarPersona(persona);
+=======
+        personaControlador.actualizarPersona(nombre, apellido, email, idPersona);
+>>>>>>> f076d41 (Version-4)
         
         this.dispose();
     }//GEN-LAST:event_btn_crearActionPerformed
 
+<<<<<<< HEAD
     /**
      * @param args the command line arguments
      */
@@ -181,6 +205,9 @@ public class FormularioDecanoActualizar extends javax.swing.JDialog {
         });
     }
 
+=======
+   
+>>>>>>> f076d41 (Version-4)
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField apellidoDecano;
     private javax.swing.JButton btn_crear;

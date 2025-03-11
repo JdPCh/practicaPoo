@@ -4,8 +4,15 @@
  */
 package Ui;
 
+<<<<<<< HEAD
 import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
+=======
+import Controlador.FacultadControlador;
+import Controlador.PersonaControlador;
+import javax.swing.JFrame;
+
+>>>>>>> f076d41 (Version-4)
 
 /**
  *
@@ -16,6 +23,12 @@ public class FormularioPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form FormularioPrincipal
      */
+<<<<<<< HEAD
+=======
+    private final FacultadControlador facultadControlador = new FacultadControlador();
+    private final PersonaControlador personaControlador = new PersonaControlador();
+    
+>>>>>>> f076d41 (Version-4)
     public FormularioPrincipal() {
         initComponents();
         inicializarPestañas();
@@ -25,8 +38,13 @@ public class FormularioPrincipal extends javax.swing.JFrame {
     }
     
     private void inicializarPestañas() {
+<<<<<<< HEAD
         jTabbedPane2.addTab("Decano", new TablaDecano());
         jTabbedPane2.addTab("Facultad", new TablaFacultad());
+=======
+        jTabbedPane2.addTab("Decano", new TablaDecano(personaControlador));
+        jTabbedPane2.addTab("Facultad", new TablaFacultad(facultadControlador, personaControlador));
+>>>>>>> f076d41 (Version-4)
         jTabbedPane2.addTab("Programa", new TablaPrograma());
         jTabbedPane2.addTab("Curso", new TablaCurso());
         jTabbedPane2.addTab("Estudiante", new TablaEstudiante());

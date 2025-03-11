@@ -50,6 +50,17 @@ public class Estudiante extends Persona{
         return codigo;
     }
 
+<<<<<<< HEAD
+=======
+    public Programa getPrograma() {
+        return programa;
+    }
+
+    public void setPrograma(Programa programa) {
+        this.programa = programa;
+    }
+
+>>>>>>> f076d41 (Version-4)
     
     void setCodigo(Double codigo) {
         this.codigo = codigo;

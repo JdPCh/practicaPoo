@@ -4,11 +4,19 @@
  */
 package Ui.VentanasEmergentes;
 
+<<<<<<< HEAD
 import Dao.FacultadDao;
 import Dao.PersonaDao;
 import java.util.List;
 import tecnologiasavanzadas.practicapoo.Facultad;
 import tecnologiasavanzadas.practicapoo.Persona;
+=======
+import Controlador.FacultadControlador;
+import Controlador.PersonaControlador;
+import DTO.PersonaDTO;
+import java.util.List;
+
+>>>>>>> f076d41 (Version-4)
 
 /**
  *
@@ -19,12 +27,24 @@ public class FormularioFacultadActualizar extends javax.swing.JDialog {
     /**
      * Creates new form FormularioFacultad
      */
+<<<<<<< HEAD
     
     List<Persona> decanos;
     Double id;
     
     public FormularioFacultadActualizar(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+=======
+    private final FacultadControlador facultadControlador;
+    private final PersonaControlador personaControlador;
+    List<PersonaDTO> decanos;
+    Double idFacultad;
+    
+    public FormularioFacultadActualizar(java.awt.Frame parent, boolean modal, FacultadControlador facultadControlador, PersonaControlador personaControlador) {
+        super(parent, modal);
+        this.facultadControlador = facultadControlador;
+        this.personaControlador = personaControlador;
+>>>>>>> f076d41 (Version-4)
         initComponents();
         cargarDecanosEnComboBox();
     }
@@ -103,6 +123,7 @@ public class FormularioFacultadActualizar extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
+<<<<<<< HEAD
     public void setId(Double id){
         this.id = id;
     }
@@ -115,29 +136,53 @@ public class FormularioFacultadActualizar extends javax.swing.JDialog {
 
         // Agregar los decanos al ComboBox
         for (Persona decano : decanos) {
+=======
+    public void setIdFacultad(Double idFacultad){
+        this.idFacultad = idFacultad;
+    }
+    
+    private void cargarDecanosEnComboBox() {
+        decanos = personaControlador.obtenerPersonas();
+        
+        comboDecanos.removeAllItems();
+
+        for (PersonaDTO decano : decanos) {
+>>>>>>> f076d41 (Version-4)
             comboDecanos.addItem(decano.getNombre());
         }
     }
     
     private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
+<<<<<<< HEAD
         
         FacultadDao facultadDao = new FacultadDao();
         
         int selectedIndex = comboDecanos.getSelectedIndex();
         Persona selectedDecano = null;
+=======
+
+        int selectedIndex = comboDecanos.getSelectedIndex();
+        PersonaDTO selectedDecano = null;
+>>>>>>> f076d41 (Version-4)
 
         if (selectedIndex != -1) {
             selectedDecano = decanos.get(selectedIndex);
             String nombreFacultadNueva  = nombreFacultad.getText();
+<<<<<<< HEAD
             
             Facultad facultad = new Facultad(id ,nombreFacultadNueva, selectedDecano);
             
             facultadDao.actualizarFacultad(facultad);
+=======
+           
+            facultadControlador.actualizarFacultad(nombreFacultadNueva, selectedDecano.getId(), idFacultad);
+>>>>>>> f076d41 (Version-4)
         }
         
         this.dispose();
     }//GEN-LAST:event_actualizarActionPerformed
 
+<<<<<<< HEAD
     /**
      * @param args the command line arguments
      */
@@ -180,6 +225,8 @@ public class FormularioFacultadActualizar extends javax.swing.JDialog {
             }
         });
     }
+=======
+>>>>>>> f076d41 (Version-4)
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton actualizar;

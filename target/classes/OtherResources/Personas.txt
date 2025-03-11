@@ -5,3 +5,8 @@ Id: 1.0, Nombre: pepe, Apellido: lozano, Email: pepe@universidad.com
 Id: 1.0, Nombre: pepe, Apellido: lozano, Email: pepe@universidad.com
 Id: 1.0, Nombre: pepe, Apellido: lozano, Email: pepe@universidad.com
 Id: 1.0, Nombre: pepe, Apellido: lozano, Email: pepe@universidad.com
+<<<<<<< HEAD
+=======
+Id: 1.0, Nombre: pepe, Apellido: lozano, Email: pepe@universidad.com
+Id: 1.0, Nombre: pepe, Apellido: lozano, Email: pepe@universidad.com
+>>>>>>> f076d41 (Version-4)

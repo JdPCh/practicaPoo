@@ -3,8 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
 package Ui.VentanasEmergentes;
+<<<<<<< HEAD
 import Dao.PersonaDao;
 import tecnologiasavanzadas.practicapoo.Persona;
+=======
+
+import Controlador.PersonaControlador;
+>>>>>>> f076d41 (Version-4)
 
 /**
  *
@@ -15,8 +20,16 @@ public class FormularioDecano extends javax.swing.JDialog {
     /**
      * Creates new form FormularioDecano
      */
+<<<<<<< HEAD
     public FormularioDecano(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+=======
+    private final PersonaControlador personaControlador;
+    
+    public FormularioDecano(java.awt.Frame parent, boolean modal, PersonaControlador personaControlador) {
+        super(parent, modal);
+        this.personaControlador = personaControlador;
+>>>>>>> f076d41 (Version-4)
         initComponents();
     }
 
@@ -123,15 +136,21 @@ public class FormularioDecano extends javax.swing.JDialog {
         String apellido = apellidoDecano.getText();
         String email = emailDecano.getText();
         
+<<<<<<< HEAD
         Persona persona = new Persona(nombre, apellido, email);
         
         PersonaDao personaDao = new PersonaDao();
         
         personaDao.crearPersona(persona);
+=======
+        
+        personaControlador.crearPersona(nombre, apellido, email);
+>>>>>>> f076d41 (Version-4)
         
         this.dispose();
     }//GEN-LAST:event_btn_crearActionPerformed
 
+<<<<<<< HEAD
     /**
      * @param args the command line arguments
      */
@@ -174,6 +193,8 @@ public class FormularioDecano extends javax.swing.JDialog {
         });
     }
 
+=======
+>>>>>>> f076d41 (Version-4)
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField apellidoDecano;
     private javax.swing.JButton btn_crear;

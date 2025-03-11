@@ -17,6 +17,7 @@ import tecnologiasavanzadas.practicapoo.Persona;
 public class PersonaDao {
 
    
+<<<<<<< HEAD
     public void crearPersona(Persona persona) {
         String query = "INSERT INTO persona (nombre, apellido, email) VALUES (?, ?, ?)";
         try (Connection conn = ConexionDB.obtenerConexion();
@@ -26,6 +27,17 @@ public class PersonaDao {
             stmt.setString(3, persona.getEmail());
             stmt.executeUpdate();
             System.out.println("Persona creada: " + persona);
+=======
+    public void crearPersona(String nombre, String apellido, String email) {
+        String query = "INSERT INTO persona (nombre, apellido, email) VALUES (?, ?, ?)";
+        try (Connection conn = ConexionDB.obtenerConexion();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setString(1, nombre);
+            stmt.setString(2, apellido);
+            stmt.setString(3, email);
+            stmt.executeUpdate();
+            System.out.println("Persona creada: " + nombre);
+>>>>>>> f076d41 (Version-4)
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -54,6 +66,7 @@ public class PersonaDao {
     }
 
    
+<<<<<<< HEAD
     public void actualizarPersona(Persona persona) {
         String query = "UPDATE persona SET nombre = ?, apellido = ?, email = ? WHERE id = ?";
         try (Connection conn = ConexionDB.obtenerConexion();
@@ -62,6 +75,16 @@ public class PersonaDao {
             stmt.setString(2, persona.getApellido());
             stmt.setString(3, persona.getEmail());
             stmt.setDouble(4, persona.getId());
+=======
+    public void actualizarPersona(String nombre, String apellido, String email, Double id) {
+        String query = "UPDATE persona SET nombre = ?, apellido = ?, email = ? WHERE id = ?";
+        try (Connection conn = ConexionDB.obtenerConexion();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setString(1, nombre);
+            stmt.setString(2, apellido);
+            stmt.setString(3, email);
+            stmt.setDouble(4, id);
+>>>>>>> f076d41 (Version-4)
             int rowsUpdated = stmt.executeUpdate();
             if (rowsUpdated > 0) {
                 System.out.println("Persona actualizada con éxito.");

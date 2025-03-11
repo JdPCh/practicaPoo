@@ -13,7 +13,11 @@ import java.util.Date;
  * @author Estudiante_MCA
  */
 public class PracticaPOO {
+<<<<<<< HEAD
 
+=======
+/*
+>>>>>>> f076d41 (Version-4)
     public static void main(String[] args) {
 
 
@@ -70,4 +74,8 @@ public class PracticaPOO {
         
         System.out.println(estudiante.toString());
     }
+<<<<<<< HEAD
+=======
+*/
+>>>>>>> f076d41 (Version-4)
 }
